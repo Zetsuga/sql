@@ -4,38 +4,34 @@ let connection = mysql.createConnection(
         host : "localhost",
         user : "root",
         password : "Jose@12.",
-        database : "codenotch"
+        database : "museo"
     }
 );
 
 let sql="";
 
 
-arr=[];
-sql = "SELECT p.nombre,pe.devolucion, au.nombre, au.apellido,au.email,it.nombre "+
-        "AS itinerante,per.nombre AS Permanente,alm.nombre AS almacen FROM pieza AS p "+
-        "JOIN prestamo AS pe ON (p.id = pe.pieza_id) "+
-        "JOIN propietario AS au ON (p.id = au.pieza_id) "+
-        "LEFT JOIN itinerante AS it ON (it.id = p.itinerante_id) "+
-        "LEFT JOIN permanente AS per ON (per.id = p.permanente_id) "+
-        "LEFT JOIN almacenada AS alm ON (alm.id = p.almacenada_id)";
+arr=["prestamo"];
+sql = "SELECT p.nombre,col.nombre,pr.devolucion,pro.nombre,pro.apellido,pro.email FROM pieza AS p " +
+        "JOIN propiedad AS pr ON (p.propiedad_id = pr.id) " +
+        "JOIN coleccion AS col ON (p.coleccion_id = col.id) " +
+        "JOIN propietario AS pro ON (p.propietario_id = pro.id) " +
+        "WHERE pr.tipo = ? ";
 
 connection.query(sql,[arr],function(err,result){
     if(err){
         console.log(err);
     }else{
-        console.log("Dato Insertado");
+        console.log("Busqueda realizada");
         console.log(result);
     }
 });
 
 arr=[];
-sql = "SELECT permanente_id,itinerante_id,almacenada_id,COUNT(*) AS contador FROM pieza AS p " +
-"LEFT JOIN itinerante AS it ON (it.id = p.itinerante_id) " +
-"LEFT JOIN permanente AS per ON (per.id = p.permanente_id) " +
-"LEFT JOIN almacenada AS alm ON (alm.id = p.almacenada_id) " +
-"GROUP BY permanente_id, itinerante_id,almacenada_id " +
-"ORDER BY contador DESC";
+sql = "SELECT c.nombre,COUNT(*) AS cantidad FROM pieza AS p " +
+        "JOIN coleccion AS c ON (p.coleccion_id = c.id) " +
+        "GROUP BY c.tipo " +
+        "ORDER BY cantidad DESC";
         
 connection.query(sql,[arr],function(err,result){
     if(err){
