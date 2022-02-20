@@ -1,0 +1,150 @@
+.contenido__banner{
+    height: 600px;
+    background-image: url("../img/fondo.png ");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.contenido__banner__texto{
+    margin-top: 50px;
+    font-size: 2em;
+}
+
+.contenido__banner__titulo{
+    margin-top: 30px;
+    font-size: 4em;
+}
+
+.contenido__banner__subtexto{
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+
+.contenido__formacion{
+    background-color:#0000ff;
+
+    padding: 50px 50px;
+}
+
+.contenido__formacion__izquierda{
+    width: 50%;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.contenido__formacion__izquierda__titulo{
+    color:white;
+    font-size: 2.5em;
+}
+
+.contenido__formacion__izquierda__texto{
+    color:white;
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+
+.contenido__formacion__derecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.contenido__formacion__derecha__imagen{
+    margin: 0 auto;
+}
+
+.contenido__comentario{
+    padding-top: 50px;
+}
+
+.contenido__comentario__izquierda{
+    width: 50%;
+    margin-top: 50px;
+}
+
+
+.contenido__comentario__derecha{
+    width: 50%;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+
+.contenido__comentario__derecha__texto{
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    }
+
+.contenido__comentario__derecha__subtexto{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.titulo_contenedor{
+    font-weight: 600;
+    text-align: center;
+    font-size: 2.3em;
+    padding-bottom: 30px;
+}
+
+.form-group{
+    padding-bottom: 10px;
+}
+
+.botonera{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.boton_adicional{
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.textoDescriptivo{
+    font-size: 1.4em;
+    text-align: justify;
+}
+
+#adicionales_busqueda, #asignatura_busqueda, #nota_busqueda, 
+#grupo_busqueda, #profesor_busqueda, #alumnos_busqueda{
+    margin-top: 40px;
+}
+
+.errorCampo{
+    border-color: red;
+}
+
+.toast{
+    position: relative;
+    bottom : -36px;
+    max-width: 250px;
+    width: 250px;
+}
+
+.toast___titulo--verde{
+    color: #0bb51f;
+}
+
+.toast___titulo--rojo{
+    color: #d30404;
+}
+
+.toast__texto{
+    color:black;
+}
+
+@media screen and (max-width: 600px) {
+    .toast{
+        position: relative;
+        max-width: 250px;
+        width: 250px;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="./CSS/menu.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Document</title>
+</head>
+<body id="body-pd">
+    
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <div class="header_img"> <img src="" alt=""> </div>
+        <div class="toast" id="toast">
+        
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Codenotch</span> </a>
+                <div class="nav_list"> 
+                    <a href="#" class="nav_link active" onclick="inicio()"> 
+                        <i class='bx bx-home-alt nav_icon'></i> 
+                        <span class="nav_name">Inicio</span> 
+                    </a> 
+                    <a href="#" class="nav_link" onclick="alumnos()"> 
+                        <i class='bx bx-grid-alt nav_icon'></i> 
+                        <span class="nav_name">Alumnos</span> 
+                    </a> 
+                    <a href="#" class="nav_link" onclick="profesor()"> 
+                        <i class='bx bx-user nav_icon'></i> 
+                        <span class="nav_name">Profesores</span> 
+                    </a>
+                    <a href="#" class="nav_link" onclick="notas()"> 
+                        <i class='bx bx-message-square-detail nav_icon'></i> 
+                        <span class="nav_name">Notas</span> 
+                    </a> 
+                    <a href="#" class="nav_link" onclick="grupo()"> 
+                        <i class='bx bx-bookmark nav_icon'></i> 
+                        <span class="nav_name">Grupos</span> 
+                    </a> 
+                    <a href="#" class="nav_link" onclick="asignatura()"> 
+                        <i class='bx bx-folder nav_icon'></i> 
+                        <span class="nav_name">Asignaturas</span> 
+                    </a> 
+                    <a href="#" class="nav_link" onclick="adicionales()"> 
+                        <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
+                        <span class="nav_name">Herramientas</span> 
+                    </a> 
+                </div>
+            </div> 
+        </nav>
+    </div>
+    
+    <div class="height-100 bg-light" >
+        <div id="contenedor__principal">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 contenido__banner">
+                        <h3 class="contenido__banner__texto">
+                            En Codenotch te convertimos<br>
+                        en un profesional Tech.</h3>
+                        <h2 class="contenido__banner__titulo">
+                            MORE THAN LEARN.<br>BECOME
+                        </h2>
+                        <h4 class="contenido__banner__subtexto">
+                            Cursos intensivos de Programación Web y Data Science
+                        </h4>
+                    </div>
+                
+                    <div class="col-xs-12 contenido__comentario">
+                        <diV class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <figure class="contenido__comentario__izquierda__imagen">
+                                    <img class="contenido__comentario__izquierda__imagen__img img-fluid" src="./img/comentario.jpg" alt="BaFormación en Codenotch">
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-md-6"> 
+                                <p class="contenido__comentario__derecha__texto">“La industria necesita iniciativas como la de Codenotch, que brinda una calidad 
+                                    docente y prepara a profesionales para la actividad real de la empresa.”</p>
+                                <p class="contenido__comentario__derecha__subtexto">Rodrigo Aguirre de Cárcer | Ex-director General Ebay España</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-xs-12 contenido__formacion">
+                        <diV class="row">
+                            <div class="col-xs-12 col-md-8">
+                                <h2 class="contenido__formacion__izquierda__titulo">Formación tecnológica con un claro objetivo</h2>
+                                <p class="contenido__formacion__izquierda__texto">Convertir a nuestros estudiantes en auténticos profesionales de la programación impulsando su carrera en la industria digital.
+                                    <br><br>
+                                    Nuestra formación intensiva y práctica va dirigida a personas que desean formar parte del motor de cambio de la industria 
+                                    tecnológica en la era de la revolución digital.
+                                    <br><br>
+                                    Los Bootcamps son programas educativos vivos, en constante actualización para contener la evolución del sector. 
+                                    Son impartidos mediante una metodología personalizada, disruptiva y transformadora que cubre las necesidades de la realidad laboral.
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <figure class="contenido__formacion__derecha__imagen">
+                                    <img class="img-fluid" src="./img/formacion.png" alt="Formación en Codenotch">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    
+    <script src="./JS/menu.js"></script>
+    <script src="./JS/asignatura.js"></script>
+    <script src="./JS/alumnos.js"></script>
+    <script src="./JS/grupos.js"></script>
+    <script src="./JS/profesor.js"></script>
+    <script src="./JS/notas.js"></script>
+    <script src="./JS/adicionales.js"></script>
+    <script src="./JS/paginas.js"></script>
+
+</body>
+</html>
