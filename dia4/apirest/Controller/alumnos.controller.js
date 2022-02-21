@@ -4,10 +4,12 @@ function getAlumnos(request,response){
     
     if(request.query.id!=null){
         param = [request.query.id];
-        sql = "SELECT * FROM students WHERE s.id = ?";
+        sql = "SELECT s.id,s.first_name,s.last_name, s.anio_ingreso , g.name  FROM students AS s "+
+        "JOIN grupo AS g ON (s.group_id =  g.id) WHERE s.id = ?";
     }else{
         param = [];
-        sql = "SELECT * FROM students";
+        sql = "SELECT s.id,s.first_name,s.last_name, s.anio_ingreso , g.name FROM students AS s "+
+        "JOIN grupo AS g ON (s.group_id =  g.id)";
     }
     connection.query(sql,param,function(err,result){
         if(err){

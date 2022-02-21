@@ -92,8 +92,8 @@ function modificarProfesor(){
    
     let profesor = {
         "id" : document.getElementById("indice").value,
-        "firstName" :  document.getElementById("nombre").value,
-        "lastName" :  document.getElementById("apellido").value
+        "firstName" :  (document.getElementById("nombre").value=="")?null:document.getElementById("nombre").value,
+        "lastName" :  (document.getElementById("apellido").value=="")?null:document.getElementById("apellido").value
     }
     
     let url =`http://127.0.0.1:3000/profesores`;

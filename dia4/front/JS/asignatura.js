@@ -75,6 +75,11 @@ function insertarAsignatura(){
             return data.json();
         })
         .then((datos)=>{
+            if(datos === -1 ){
+                crearToast("Asignatura no guardada","Fallo","red");
+            }else{
+                crearToast("Asignatura guardada con exito","Guardado","green")
+            }
             console.log(datos);
         })
         .catch((error)=>{
@@ -86,7 +91,7 @@ function insertarAsignatura(){
 function modificarAsignatura(){
     let asignatura = {
         "id" : document.getElementById("indice").value,
-        "title" : document.getElementById("titulo").value
+        "title" : (document.getElementById("titulo").value=="")?null:document.getElementById("titulo").value
     }
     
     let url =`http://127.0.0.1:3000/asignaturas`;
@@ -101,6 +106,11 @@ function modificarAsignatura(){
         return data.json();
     })
     .then((datos)=>{
+        if(datos ===  -1){
+            crearToast("Asignatura no modificada","Fallo","red");
+        }else{
+            crearToast("Asignatura modificada con exito","Modificado","green")
+        }
         console.log(datos);
     })
     .catch((error)=>{
@@ -127,6 +137,11 @@ function eliminarAsignatura(){
             return data.json();
         })
         .then((datos)=>{
+            if(datos ===  -1){
+                crearToast("Asignatura no eliminada","Fallo","red");
+            }else{
+                crearToast("Asignatura eliminada con exito","Modificado","green")
+            }
             console.log(datos);
         })
         .catch((error)=>{
@@ -157,6 +172,34 @@ function cargarAsignatura(){
     let id =document.getElementById("indice").value;
 
     let url =`http://127.0.0.1:3000/asignaturas?student_id=${id}`;
+    let param ={
+        headers : {"Content-type" : "application/json; charset = uTF-8"},
+        method : "GET" 
+    }
+
+    
+    fetch(url,param)
+    .then((data)=>{
+        return data.json();
+    })
+    .then((datos)=>{
+        let select=`<option value="null" selected="selected"></option>`;
+
+        for(let i=0; i<datos.length;i++){
+            select+= `<option value="${datos[i].id}">${datos[i].title}</option>`;
+        }
+
+        grupoSelect.innerHTML =select;
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+}
+
+function cargarAsignaturaAlumno(){
+    let grupoSelect = document.getElementById("asignatura");
+
+    let url =`http://127.0.0.1:3000/asignaturas`;
     let param ={
         headers : {"Content-type" : "application/json; charset = uTF-8"},
         method : "GET" 

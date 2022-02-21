@@ -309,6 +309,53 @@ let grupoSelect = document.getElementById("alumno");
     cargarAlumnos(grupoSelect);
 }
 
+function asignarAsignatura(){
+    let capaGrupo =`<div class="container">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-sm-6">
+                            <h3 class="titulo_contenedor">MATRICULAR ALUMNO</h3>
+                                <form>
+                                    <div class="form-group">
+                                    <label for="indice">Indice</label>
+                                    <input type="number" class="form-control" id="indice" aria-describedby="emailHelp" placeholder="Índice">
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="asignatura">Asignatura</label>
+                                    <select class="form-control" id="asignatura">
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="nombre">Alumno</label>
+                                    <select class="form-control" id="alumno">
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="grupo">Grupo</label>
+                                    <select class="form-control" id="grupo">
+                                    </select>
+                                    </div>
+                                    <div class="botonera">
+                                    <button type="button" class="btn btn-primary" onclick="buscarAsignaturaAlumno()">Buscar</button>
+                                    <button type="button" class="btn btn-success" onclick="insertarAsignaturaAlumno()">Añadir</button>.
+                                    <button type="button" class="btn btn-warning" onclick="modificarAsignaturaAlumno()">Modificar</button>
+                                    <button type="button" class="btn btn-danger" onclick="eliminarAsignaturaAlumno()">Eliminar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="w-100"></div>
+
+                            <div class="col-sm-6" id="alumnoAsignatura_busqueda">
+                        </div>
+                        </div>
+                    </div>`;
+
+    contenedor.innerHTML=capaGrupo;
+    let capaAlumno = document.getElementById("alumno");
+    let GrupoSelect = document.getElementById("grupo");
+    cargarGrupo(GrupoSelect);
+    cargarAsignaturaAlumno();
+    }
+
 function crearToast(text,title,color){
     let texto = text;
     let titulo = title;

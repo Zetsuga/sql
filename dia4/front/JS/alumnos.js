@@ -28,7 +28,7 @@ function buscarAlumnos(){
         return data.json();
     })
     .then((datos)=>{
-        
+        console.log(datos)
         let tabla=`<table class="table tablaCodenotch table-striped table-hover">
                 <thead>
                     <td scope="col">Índice</td>
@@ -108,8 +108,8 @@ function modificarAlumnos(){
     
     let alumno = {
         "id" : document.getElementById("indice").value,
-        "firstName" :  document.getElementById("nombre").value,
-        "lastName" :  document.getElementById("apellido").value,
+        "firstName" :  (document.getElementById("nombre").value=="")?null:document.getElementById("nombre").value,
+        "lastName" :  (document.getElementById("apellido").value=="")?null:document.getElementById("apellido").value,
         "anioIngreso" :  fecha,
         "groupId" : document.getElementById("grupo").value 
     }

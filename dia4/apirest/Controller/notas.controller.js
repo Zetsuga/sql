@@ -63,8 +63,8 @@ function modificarNotas(request,response){
 }
 
 function borrarNotas(request,response){
-    let temp = request.body; 
-    param = [temp.id]
+    let {id} = request.body; 
+    param = [id];
 
     sql = "DELETE FROM marks WHERE mark_id = ?";
 

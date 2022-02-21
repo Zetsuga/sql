@@ -111,7 +111,7 @@ function modificarNota(){
         "id" : document.getElementById("idnota").value,
         "studentId" :document.getElementById("indice").value,
         "subjectId" :  document.getElementById("asignatura").value,
-        "mark" :  document.getElementById("nota").value,
+        "mark" :  (document.getElementById("nota").value=="")?null:document.getElementById("nota").value,
         "date" :  fecha
     }
     
@@ -142,9 +142,9 @@ function modificarNota(){
 function eliminarNota(){
     if(document.getElementById("indice").value != ""){
         let nota = {
-            "id" : document.getElementById("indice").value
+            "id" : document.getElementById("idnota").value
         }
-        
+        console.log(nota)
         let url =`http://127.0.0.1:3000/notas`;
         let param ={
             headers : {"Content-type" : "application/json; charset = uTF-8"},
